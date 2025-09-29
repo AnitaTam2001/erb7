@@ -16,19 +16,19 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul class="navbar-nav">
             <li {% if '/' == request.path %}
-            class = "nav-item active mr3"
+            class = "nav-item active mr-3"
             {% else %}
             class = "nav-item mr-3"
             {% endif %}
             >
-              <a class="nav-link" href={% url "pages:index" %}>Home</a>
+              <a class="nav-link" href={% url "pages:index" %} >Home</a>
             </li>
             <li {% if 'about' in request.path %}
                 class = "nav-item mr-3 active"
               {% else %}
               class = "nav-item mr-3"
               {% endif %}>
-              <a class="nav-link" href={% url "pages:about" %}>About</a>
+              <a class="nav-link" href={% url "pages:about" %} >About</a>
             </li>
             <li class="nav-item mr-3">
               <a class="nav-link" href={% url "listings:listings" %}
