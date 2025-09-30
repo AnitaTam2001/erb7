@@ -1,9 +1,17 @@
 from django.shortcuts import render
-
+from .models import Listing
 # Create your views here.
-
 def listings(request):
-    return render(request, 'listings/listings.html')
+    listings = Listing.objects.all() 
+    print("listing data")
+    print(listings)
+    #use listing select *.  objects.all = queryset 
+    context = {'listings': listings} 
+    #listings = base manager. 
+    return render(request, 'listings/listings.html', context)
+
+# def listings(request):
+#     return render(request, 'listings/listings.html')
 
 def listing(request):
     return render(request, 'listings/listing.html')
