@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'debug_toolbar',
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
@@ -88,7 +89,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'Asdf1234',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 

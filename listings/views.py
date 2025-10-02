@@ -10,9 +10,6 @@ def listings(request):
     #listings = base manager. 
     return render(request, 'listings/listings.html', context)
 
-# def listings(request):
-#     return render(request, 'listings/listings.html')
-
 def listing(request):
     return render(request, 'listings/listing.html')
 
