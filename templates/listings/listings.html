@@ -1,5 +1,4 @@
 {% extends 'base.html' %} 
-<!-- load humanize -->
 {% load humanize %} 
 {% block content %} {% load static %} 
     <section id="showcase-inner" class="py-5 text-white">
@@ -22,7 +21,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-            <a href= {% url "pages:index" %} > <i class="fas fa-home"></i> Home</a>
+              <a href= {% url "pages:index" %} > <i class="fas fa-home"></i> Home</a>
             </li>
             <li class="breadcrumb-item active">Browse Listings</li>
           </ol>
@@ -93,28 +92,50 @@
           </div>
           {% endif %}
         </div>
+
         <div class="row">
           <div class="col-md-12">
+          {% if listings.has_other_pages %}
             <ul class="pagination">
+              {% if listings.has_previous %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{listings.previous_page_number}}">&laquo;</a> 
+              </li>              
+              {% else %}
               <li class="page-item disabled">
-                <a class="page-link" href="#">&laquo;</a>
+                <a class="page-link" href="#">&laquo;</a> 
               </li>
+              {% endif %}
+
+              {% for i in listings.paginator.page_range %}
+              {% if listings.number == i %}
               <li class="page-item active">
-                <a class="page-link" href="#">1</a>
+                <a class="page-link">{{i}}</a>
               </li>
+              {% else %}
               <li class="page-item">
-                <a class="page-link" href="#">2</a>
+                <a class="page-link" href="?page={{i}}">{{i}}</a>
               </li>
+              {% endif %}
+              {% endfor %}
+
+              {% if listings.has_next %}
               <li class="page-item">
-                <a class="page-link" href="#">3</a>
+                <a class="page-link" href="?page={{listings.next_page_number}}">&raquo;</a> 
+              </li>              
+              {% else %}
+              <li class="page-item disabled">
+                <a class="page-link" href="#">&raquo;</a> 
               </li>
-              <li class="page-item">
-                <a class="page-link" href="#">&raquo;</a>
-              </li>
+              {% endif %}              
             </ul>
+          {% endif %}
           </div>
         </div>
       </div>
     </section>
 
 {% endblock %}
+
+
+
