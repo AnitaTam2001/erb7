@@ -4,7 +4,6 @@
     <section id="showcase">
       <div class="container text-center">
         <div class="home-search p-5">
-
           <div class="overlay p-5">
             <h1 class="display-4 mb-4">Clinic Searching Just Got So Easy</h1>
             <p class="lead">
@@ -12,8 +11,7 @@
               Recusandae quas, asperiores eveniet vel nostrum magnam voluptatum
               tempore! Consectetur, id commodi!
             </p>
-            <div class="search">
-      {% comment %} fix search.html {% endcomment %}       
+            <div class="search">  
               <form action="search.html">
                 <!-- Form Row 1 -->
                 <div class="form-row">
@@ -99,7 +97,7 @@
       <div class="container">
         <h3 class="text-center mb-3">{{'Inpatient medical services'|title}}</h3>
         <div class="row">
-
+        
           <!-- Listing 1 -->
           {% if listings %}
           {% for listing in listings %}
@@ -146,7 +144,7 @@
                   </div>
                 </div>
                 <hr />
-                <a href="listing.html" class="btn btn-primary btn-block"
+                <a href={% url 'listings:listing' listing.id %} class="btn btn-primary btn-block"
                   >More Info</a>
               </div>
             </div>

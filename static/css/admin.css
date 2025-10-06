@@ -13,7 +13,7 @@ a:visited {
 }
 
 div.breadcrumbs {
-    background : #29ab88;
+    background: #29ab88;
     color : #2d4363;
 }
 div.breadcrumbs a {
@@ -29,7 +29,7 @@ input[type="submit"],
 input[type='button'],
 .submit-row input,
 a.button {
-    background: #2d4363;
+    background: #bb1919;
     color: #fff;
 }
 .brands {
