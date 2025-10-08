@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %} {% block content %}
+
     <!-- Showcase -->
     <section id="showcase">
       <div class="container text-center">
@@ -30,55 +31,33 @@
                   <div class="col-md-4 mb-3">
                     <label class="sr-only">District</label>
                     <select name="district" class="form-control">
-                      <option selected="true" disabled="disabled">
+                      <option selected="true" value= ''>
                         District (All)
                       </option>
-                      <option value="IL">Islands</option>
-                      <option value="KT">Kwai Tsing</option>
-                      <option value="NR">North</option>
-                      <option value="SK">Sai Kung</option>
-                      <option value="ST">Sha Tin</option>
-                      <option value="TP">Tai Po</option>
-                      <option value="TW">Tsuen Wan</option>
-                      <option value="TM">Tuen Mun</option>
-                      <option value="YL">Yuen Long</option>
-                      <option value="KC">Kowloon City</option>
-                      <option value="KW">Kwun Tong</option>
-                      <option value="SS">Sham Shui Po</option>
-                      <option value="WT">Wong Tai Sin</option>
-                      <option value="YM">Yau Tsim Mong</option>
-                      <option value="CW">Central & Western</option>
-                      <option value="ER">Eastern</option>
-                      <option value="SR">Southern</option>
-                      <option value="WC">Wan Chai</option>
+                      {% for key, value in district_choices.items %}
+                      <option value="{{key}}">{{value}}</option>
+                      {% endfor %}
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <label class="sr-only">Bedrooms</label>
+                    <label class="sr-only">Nights</label>
                     <select name="bedrooms" class="form-control">
-                      <option selected="true" disabled="disabled">
+                      <option selected="true" value = ''>
                         Night (All)
                       </option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
+                      {% for key,value in night_choices.items %}
+                      <option value="{{key}}">{{value}}</option>
+                      {% endfor %}
                     </select>
                   </div>
                   <div class="col-md-4 mb-3">
-                    <select name="price" class="form-control" id="type">
-                      <option selected="true" disabled="disabled">
-                        Bedrooms (All)
+                    <select name="room_type" class="form-control" id="type">
+                      <option selected="true" value = ''>
+                        Rooms Types (All)
                       </option>
-                      <option value="1">Private Rooms</option>
-                      <option value="2">Semi-Private Rooms</option>
-                      <option value="3">Standard (Multi-bed) Rooms</option>
+                      {% for key,value in room_choices.items %}
+                      <option value="{{key}}">{{value}}</option>
+                      {% endfor %}
                     </select>
                   </div>
                 </div>
