@@ -2,6 +2,7 @@
 {% comment %} load humanize {% endcomment %}
 {% load humanize %}
 {% block content %} {% load static %} 
+
 <section id="showcase-inner" class="py-5 text-white">
     <div class="container">
     <div class="row text-center">
@@ -25,6 +26,7 @@
             <a href={% url 'listings:listings' %}>Listings</a>
         </li>
         <li class="breadcrumb-item active">{{listing.title | title}}</li>
+<!-- *** <li class="breadcrumb-item active">Lifeline Wellness Center</li> -->
         </ol>
     </nav>
     </div>
@@ -32,8 +34,7 @@
 
 <!-- Listing -->
 <section id="listing" class="py-4">
-    <div class="container">
-        {% comment %}         {% endcomment %}    
+    <div class="container">   
     <a href={% url 'listings:listings' %} class="btn btn-light mb-4">Back To Listings</a>
     <div class="row">
         <div class="col-md-9">
@@ -47,7 +48,6 @@
         <div class="row mb-5 thumbs">
             {% if listing.photo_1 %}
             <div class="col-md-2">
-        {% comment %}         {% endcomment %}
             <a
                 href={{listing.photo_1.url}}
                 data-lightbox="home-images"
@@ -62,7 +62,6 @@
             {% endif %}
             {% if listing.photo_2 %}
             <div class="col-md-2">
-        {% comment %}         {% endcomment %}
             <a
                 href={{listing.photo_2.url}}
                 data-lightbox="home-images"
@@ -77,7 +76,6 @@
             {% endif %}
             {% if listing.photo_3 %}
             <div class="col-md-2">
-        {% comment %}         {% endcomment %}
             <a
                 href={{listing.photo_3.url}}
                 data-lightbox="home-images"
@@ -92,7 +90,6 @@
             {% endif %}
             {% if listing.photo_4 %}
             <div class="col-md-2">
-        {% comment %}         {% endcomment %}
             <a
                 href={{listing.photo_4.url}}
                 data-lightbox="home-images"
@@ -107,7 +104,6 @@
             {% endif %}
             {% if listing.photo_5 %}
             <div class="col-md-2">
-        {% comment %}         {% endcomment %}
             <a
                 href={{listing.photo_5.url}}
                 data-lightbox="home-images"
@@ -122,7 +118,6 @@
             <div class="col-md-2">
             {% endif %}
             {% if listing.photo_6 %}
-        {% comment %}         {% endcomment %}
             <a
                 href={{listing.photo_6.url}}
                 data-lightbox="home-images"

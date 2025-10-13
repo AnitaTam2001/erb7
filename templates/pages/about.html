@@ -39,7 +39,6 @@
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sunt,
               pariatur!
             </p>
-      {% comment %} src about {% endcomment %}
             <img src={% static 'img/about.jpg' %} alt="" />
             <p class="mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -89,7 +88,7 @@
       <div class="container">
         <h2 class="text-center pb-4">Our Team</h2>
         <div class="row text-center">
-        {% if doctors%}
+        {% if doctors %}
         {% for doctor in doctors %}
           <div class="col-md-4">
             <img
@@ -105,12 +104,12 @@
             <p><i class="fas fa-phone"></i>{{doctor.phone}}</p>
             <p><i class="fas fa-envelope-open"></i>{{doctor.email}}</p>
           </div>
-          {% endfor %}
-          {% else %}
+        {% endfor %}
+        {% else %}
           <div class="col-md-12">
             <h2> No Doctor Available - We are hiring ! </h2>
           </div>
-          {% endif %}
+        {% endif %}
         </div>
       </div>
     </section>
