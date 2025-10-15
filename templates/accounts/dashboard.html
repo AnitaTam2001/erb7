@@ -52,7 +52,7 @@
                     
                     <button class="btn btn-danger" data-url="{% url 'contacts:delete_contact' contact.id %}" data-toggle="modal" data-target="#deleteConfirmModal" data-id="{{contact.id}}">Delete Listing</button>
 
-                    <a class="btn btn-success" href="{% url 'contacts:edit_contact' contact.listing_id %}">Edit Listing</a>
+                    <a class="btn btn-success" href="{% url 'contacts:edit_contact' contact.id %}">Edit Listing</a>
                   </td>
                 </tr>
                 {% endfor %}

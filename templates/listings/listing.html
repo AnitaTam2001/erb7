@@ -43,21 +43,18 @@
         <img
             src={{listing.photo_main.url}}
             alt=""
-            class="img-main img-fluid mb-3"
-        />
+            class="img-main img-fluid mb-3"/>
         <!-- Thumbnails -->
         <div class="row mb-5 thumbs">
             {% if listing.photo_1 %}
             <div class="col-md-2">
             <a
                 href={{listing.photo_1.url}}
-                data-lightbox="home-images"
-            >
+                data-lightbox="home-images">
                 <img
                 src={{listing.photo_1.url}}
                 alt=""
-                class="img-fluid"
-                />
+                class="img-fluid"/>
             </a>
             </div>
             {% endif %}
@@ -65,13 +62,11 @@
             <div class="col-md-2">
             <a
                 href={{listing.photo_2.url}}
-                data-lightbox="home-images"
-            >
+                data-lightbox="home-images">
                 <img
                 src={{listing.photo_2.url}}
                 alt=""
-                class="img-fluid"
-                />
+                class="img-fluid"/>
             </a>
             </div>
             {% endif %}
@@ -79,13 +74,11 @@
             <div class="col-md-2">
             <a
                 href={{listing.photo_3.url}}
-                data-lightbox="home-images"
-            >
+                data-lightbox="home-images">
                 <img
                 src={{listing.photo_3.url}}
                 alt=""
-                class="img-fluid"
-                />
+                class="img-fluid"/>
             </a>
             </div>
             {% endif %}
@@ -93,13 +86,11 @@
             <div class="col-md-2">
             <a
                 href={{listing.photo_4.url}}
-                data-lightbox="home-images"
-            >
+                data-lightbox="home-images">
                 <img
                 src={{listing.photo_4.url}}
                 alt=""
-                class="img-fluid"
-                />
+                class="img-fluid"/>
             </a>
             </div>
             {% endif %}
@@ -107,13 +98,11 @@
             <div class="col-md-2">
             <a
                 href={{listing.photo_5.url}}
-                data-lightbox="home-images"
-            >
+                data-lightbox="home-images">
                 <img
                 src={{listing.photo_5.url}}
                 alt=""
-                class="img-fluid"
-                />
+                class="img-fluid"/>
             </a>
             </div>
             <div class="col-md-2">
@@ -121,13 +110,11 @@
             {% if listing.photo_6 %}
             <a
                 href={{listing.photo_6.url}}
-                data-lightbox="home-images"
-            >
+                data-lightbox="home-images">
                 <img
                 src={{listing.photo_6.url}}
                 alt=""
-                class="img-fluid"
-                />
+                class="img-fluid"/>
             </a>
             </div>
             {% endif %}
@@ -136,57 +123,62 @@
         <div class="row mb-5 fields">
             <div class="col-md-6">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-money-bill-alt"></i> Inpatient Fee
-                Estimate:
-                <span class="float-right">$20,000/Day</span>
-                </li>
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-bed"></i> Bedrooms:
-                <span class="float-right">30</span>
-                </li>
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-bath"></i> Bathrooms:
-                <span class="float-right">Private</span>
-                </li>
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-dumbbell"></i> Treatment:
-                <span class="float-right"> Have </span>
-                </li>
+                <div class="row py-2 text-secondary">
+                  <div class="col-6">
+                    <i class="fas fa-th-large"></i> Services {{listing.service}}
+                  </div>
+                  <div class="col-6"><i class="fas fa-dumbbell"></i> Screens {{listing.screen}}
+                  </div>
+                </div>
+                <div class="row py-2 text-secondary">
+                  <div class="col-6">
+                    <i class="fas fa-bed"></i> Rooms {{listing.rooms}}
+                  </div>
+                  <div class="col-6">
+                    <i class="fas fa-bath"></i> Professionals {{listing.professional}}
+                  </div>
+                </div>
+                <hr />
+                <div class="row py-2 text-secondary">
+                  <div class="col-12"><i class="fas fa-user"></i> {{listing.doctor.name}}</div>
+                </div>
+                <div class="row text-secondary pb-2">
+                  <div class="col-12">
+                    <i class="fas fa-clock"></i> Reservation required
+                  </div>
+                </div>
             </ul>
-            </div>
-            <div class="col-md-6">
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-th-large"></i> Restrooms:
-                <span class="float-right">Have</span>
-                </li>
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-square"></i> Specialized Care:
-                <span class="float-right">No</span>
-                </li>
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-calendar"></i> Preventative Services:
-                <span class="float-right">Have</span>
-                </li>
-                <li class="list-group-item text-secondary">
-                <i class="fas fa-bed"></i> Minor Surgical Procedures:
-                <span class="float-right">No</span>
-                </li>
-            </ul>
-            </div>
         </div>
-
-            <!-- Description -->
+    </div>
+            <!-- Professional -->
             <div class="row mb-5">
-              <div class="col-md-12">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Mollitia recusandae esse reiciendis officia omnis non rerum
-                dicta cupiditate nostrum molestias deserunt aut minus inventore
-                animi atque, consequuntur ad fugit. Possimus culpa blanditiis
-                repellendus ipsa similique ullam, natus error dolor harum.
+              <h4 class="mr-3 text-secondary">Professionals: </h4>
+                {% if listing.professionals.all %} <!-- check if there are any professionals -->
+                <ul>
+                  {% for professional in listing.professionals.all %}
+                <!-- Access fields from the Subject model (e.g., name) -->
+                  <li class="mr=3"><h4>{{ professional.name }}</h4></li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <h4>No Professionals</h4>
+                {% endif %}
               </div>
-            </div>
+
+          <!-- services -->
+            <div class="row mb-5">
+              <h4 class="mr-3 text-secondary">Services: </h4>
+                {% if listing.services.all %} 
+                {% for service_tag in listing.services.all %}
+                <ul>
+                  <li class="mr=3"><h4>{{ service_tag.name | title }}</h4></li>
+                </ul>
+                {% endfor %}
+                {% else %}
+                  <h4>No Services</h4>
+                {% endif %}
+              </div>
+            <div class="col-md-12">{{listing.description}}</div>
           </div>
           <div class="col-md-3">
             <div class="card mb-3">
@@ -203,8 +195,7 @@
             <button
               class="btn-primary btn-block btn-lg"
               data-toggle="modal"
-              data-target="#inquiryModal"
-            >
+              data-target="#inquiryModal">
               Make An Inquiry
             </button>
           </div>
@@ -222,6 +213,8 @@
             <span>&times;</span>
         </button>
         </div>
+
+
 
         <div class="modal-body">
         <form action="{% url 'contacts:contact' %}" method="POST">
