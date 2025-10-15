@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Contact
 from django.contrib import messages
 from contacts.forms import ContactForm
+from django.core.mail import send_mail
 # Create your views here.
 
 def contact(request):
@@ -13,6 +14,7 @@ def contact(request):
         phone = request.POST['phone']
         message = request.POST['message']
         user_id = request.POST['user_id']
+        doctor_email = request.POST['doctor_email']
         if request.user.is_authenticated:
             has_contacted = Contact.objects.all().filter(listing_id=listing_id,user_id=user_id)
             if has_contacted:
@@ -20,6 +22,14 @@ def contact(request):
                 return redirect('listings:listing', listing_id=listing_id)
         contact = Contact(listing=listing, listing_id=listing_id, name=name, email=email, phone=phone, message=message,user_id=user_id)
         contact.save()
+        # send email
+        send_mail(
+            "Clinic Inquiry",
+            "There has been an inquiry for " + listing + '. Sign into the admin panel for more info', 
+            'anitatam2001@gmail.com',
+            [doctor_email],
+            fail_silently=False
+        )
         messages.success(request, "Your request has been submitted, a representative will get back to you soon")
         return redirect('listings:listing', listing_id=listing_id)
 
