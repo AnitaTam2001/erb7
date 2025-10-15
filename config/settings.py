@@ -92,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'clinic',
         'USER': 'postgres',
-        'PASSWORD': 'Asdf1234',
+        'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5433',
     }
@@ -162,6 +162,6 @@ EMAIL_PORT = 587  # Common port for TLS/STARTTLS, or 465 for SSL
 EMAIL_USE_TLS = True  # Use TLS for secure connection (or EMAIL_USE_SSL = True if using SSL)
 EMAIL_HOST_USER = 'anitatam2001@gmail.com'  # Your email address for authentication
 EMAIL_HOST_PASSWORD = 'tblhlhspicfhotwb'  # Your email password or app-specific password
-DEFAULT_FROM_EMAIL = 'anitatam2001@gmail.com'  # Default sender email address
+DEFAULT_FROM_EMAIL = 'anitatam2001@yahoo.com.hk'  # Default sender email address
 
 #tblh lhsp icfh otwb
