@@ -45,10 +45,12 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'debug_toolbar',
     'taggit',
+    'widget_tweaks',
     'pages.apps.PagesConfig',
     'listings.apps.ListingsConfig',
     'doctors.apps.DoctorsConfig',
     'accounts.apps.AccountsConfig',
+    'contacts.apps.ContactsConfig'
 ]
 
 MIDDLEWARE = [
