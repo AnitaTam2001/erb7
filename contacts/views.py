@@ -27,7 +27,7 @@ def contact(request):
             'Clinic Inquiry',
             'There has been an inquiry for ' + listing + '. Sign into the admin panel for more info', 
             'anitatam2001@gmail.com'
-            [doctor_email, contact.email],
+            [doctor_email],
             fail_silently=False
         )
         messages.success(request, "Your request has been submitted, a representative will get back to you soon")

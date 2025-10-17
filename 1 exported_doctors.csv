@@ -1,0 +1,9 @@
+id,name,email,phone,is_mvp,description
+258,陳大明,chendaming@hospital.com,0223456789,True,資深內科醫師，專長於慢性病管理，擁有20年臨床經驗。
+259,林小美,linxiaomei@hospital.com,0223456790,True,小兒科專家，親切細心，擅長兒童發展評估。
+260,王建國,wangjianguo@hospital.com,0223456791,False,外科手術專家，擁有25年手術經驗，專精微創手術。
+261,張美麗,zhangmeili@hospital.com,0223456792,True,眼科主任醫師，白內障手術專家，引進最新雷射技術。
+262,劉德華,liudehua@hospital.com,0223456793,False,家庭醫學科醫師，提供全方位家庭健康管理服務。
+263,黃志明,huangzhiming@hospital.com,0223456794,True,牙科醫師，隱形矯正專家，注重患者舒適體驗。
+264,吳曉芳,wuxiaofang@hospital.com,0223456795,False,婦產科醫師，溫柔細心，專注婦女健康照護。
+265,鄭成功,zhengchenggong@hospital.com,0223456796,True,復健科醫師，運動傷害復健專家，奧運選手指定醫師。
